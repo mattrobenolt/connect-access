@@ -1,6 +1,6 @@
 # connect-access
 
-Access controls (ACLs) by location as a Connect middleware.
+Access controls (ACLs) by location as a Connect middleware. Inspired by nginx's [http_access_module](http://nginx.org/en/docs/http/ngx_http_access_module.html).
 
 ## Installation
 ```

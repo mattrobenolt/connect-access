@@ -1,7 +1,8 @@
 {
   "name": "connect-access",
   "version": "0.0.0",
-  "description": "",
+  "description": "Access controls (ACLs) by location as a Connect middleware",
+  "keywords": ["acl", "subnet", "cidr", "middleware", "connect", "filter"],
   "main": "index.js",
   "dependencies": {
     "path-to-regexp": "^0.1.2",

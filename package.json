@@ -13,7 +13,7 @@
   "main": "index.js",
   "dependencies": {
     "path-to-regexp": "*",
-    "netmask": "^1.0.4"
+    "netmask": "~1.0.4"
   },
   "devDependencies": {
     "mocha": "*"

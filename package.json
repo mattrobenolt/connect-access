@@ -12,11 +12,11 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "path-to-regexp": "^0.1.2",
+    "path-to-regexp": "*",
     "netmask": "^1.0.4"
   },
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "mocha": "*"
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --reporter dot"

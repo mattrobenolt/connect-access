@@ -1,6 +1,6 @@
 {
   "name": "connect-access",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Access controls (ACLs) by location as a Connect middleware",
   "keywords": [
     "acl",

@@ -12,7 +12,7 @@ module.exports = function accessControl(path, rules) {
       return;
     }
 
-    if (!checkIP(req, rules)) {
+    if (!checkIP(req.connection.remoteAddress, rules)) {
       res.statusCode = 403;
       res.end('Forbidden\n');
       return;

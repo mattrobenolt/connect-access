@@ -1,0 +1,19 @@
+{
+  "name": "connect-access",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "connect": "~2.14.4"
+  },
+  "devDependencies": {
+    "connect": "^2.14.4",
+    "path-to-regexp": "^0.1.2",
+    "netmask": "^1.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD"
+}

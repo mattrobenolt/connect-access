@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "connect": "~2.14.4"
-  },
-  "devDependencies": {
-    "connect": "^2.14.4",
     "path-to-regexp": "^0.1.2",
     "netmask": "^1.0.4"
+  },
+  "devDependencies": {
+    "connect": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Matt Robenolt <matt@ydekproductions.com>",
+  "repository": "git://github.com/mattrobenolt/connect-access.git",
   "license": "BSD"
 }

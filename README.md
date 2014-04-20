@@ -37,6 +37,8 @@ There are 2 ways to declare a list of acls.
 
 To allow or disallow, the ip rule is prefixed with a `+` or `-`. If no qualifier is specified, it's allowed to `allow`.
 
+Rules are executed first to last and ends when the first rule is matched. If no match is found, assumes allow everything.
+
 ### Example Rules
 
 ```javascript

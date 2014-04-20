@@ -38,12 +38,14 @@ function makeRule(rule) {
 
   // Special case "all"
   if (rule === 'all') {
-    rule = '0.0.0.0/0';
+    netmask = rule;
+  } else {
+    netmask = new Netmask(rule);
   }
 
   return {
     allowed: allowed,
-    netmask: new Netmask(rule)
+    netmask: netmask
   };
 }
 
@@ -57,7 +59,7 @@ function checkIP(ip, rules) {
         netmask = rule.netmask,
         allowed = rule.allowed;
 
-    if (netmask.contains(ip)) {
+    if (netmask === 'all' || netmask.contains(ip)) {
       return allowed;
     }
   };

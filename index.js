@@ -4,7 +4,7 @@ var Netmask = require('netmask').Netmask;
 
 module.exports = function accessControl(path, rules) {
   var regexp = pathRegexp(path);
-  rules = rules.map(makeRule);
+  rules = (rules || []).map(makeRule);
 
   return function(req, res, next) {
     if (!req.url.match(regexp)) {

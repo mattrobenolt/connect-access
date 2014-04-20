@@ -2,17 +2,24 @@
   "name": "connect-access",
   "version": "0.0.0",
   "description": "Access controls (ACLs) by location as a Connect middleware",
-  "keywords": ["acl", "subnet", "cidr", "middleware", "connect", "filter"],
+  "keywords": [
+    "acl",
+    "subnet",
+    "cidr",
+    "middleware",
+    "connect",
+    "filter"
+  ],
   "main": "index.js",
   "dependencies": {
     "path-to-regexp": "^0.1.2",
     "netmask": "^1.0.4"
   },
   "devDependencies": {
-    "connect": "*"
+    "mocha": "^1.18.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha --reporter dot"
   },
   "author": "Matt Robenolt <matt@ydekproductions.com>",
   "repository": "git://github.com/mattrobenolt/connect-access.git",

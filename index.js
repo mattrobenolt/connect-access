@@ -38,7 +38,7 @@ function makeRule(rule) {
 
   // Special case "all"
   if (rule === 'all') {
-    rule = '0.0.0.0/32';
+    rule = '0.0.0.0/0';
   }
 
   return {
@@ -57,7 +57,7 @@ function checkIP(ip, rules) {
         netmask = rule.netmask,
         allowed = rule.allowed;
 
-    if (netmask.contains(ip) === allowed) {
+    if (netmask.contains(ip)) {
       return allowed;
     }
   };

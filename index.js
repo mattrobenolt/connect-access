@@ -3,11 +3,11 @@ var Netmask = require('netmask').Netmask;
 
 
 module.exports = function accessControl(path, rules, nextauth) {
-  var regexp = pathRegexp(path);
+  var regexp = path?pathRegexp(path):undefined;
   rules = (rules || []).map(makeRule);
 
   return function(req, res, next) {
-    if (!req.url.match(regexp)) {
+    if (regexp && !req.url.match(regexp)) {
       next();
       return;
     }
@@ -16,11 +16,10 @@ module.exports = function accessControl(path, rules, nextauth) {
       if (nextauth !== undefined) {
         return nextauth(req, res, next);
       }
-      res.statusCode = 403;
-      res.end('Forbidden\n');
-      return;
+        res.statusCode = 403;
+        res.end('Forbidden\n');
+        return;
     }
-
     next();
   }
 };

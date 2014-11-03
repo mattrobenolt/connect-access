@@ -2,22 +2,24 @@ var pathRegexp = require('path-to-regexp');
 var Netmask = require('netmask').Netmask;
 
 
-module.exports = function accessControl(path, rules) {
-  var regexp = pathRegexp(path);
+module.exports = function accessControl(path, rules, nextauth) {
+  var regexp = path?pathRegexp(path):undefined;
   rules = (rules || []).map(makeRule);
 
   return function(req, res, next) {
-    if (!req.url.match(regexp)) {
+    if (regexp && !req.url.match(regexp)) {
       next();
       return;
     }
 
     if (!checkIP(req.connection.remoteAddress, rules)) {
-      res.statusCode = 403;
-      res.end('Forbidden\n');
-      return;
+      if (nextauth !== undefined) {
+        return nextauth(req, res, next);
+      }
+        res.statusCode = 403;
+        res.end('Forbidden\n');
+        return;
     }
-
     next();
   }
 };

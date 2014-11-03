@@ -2,7 +2,7 @@ var pathRegexp = require('path-to-regexp');
 var Netmask = require('netmask').Netmask;
 
 
-module.exports = function accessControl(path, rules) {
+module.exports = function accessControl(path, rules, nextauth) {
   var regexp = pathRegexp(path);
   rules = (rules || []).map(makeRule);
 
@@ -13,6 +13,9 @@ module.exports = function accessControl(path, rules) {
     }
 
     if (!checkIP(req.connection.remoteAddress, rules)) {
+      if (nextauth !== undefined) {
+        return nextauth(req, res, next);
+      }
       res.statusCode = 403;
       res.end('Forbidden\n');
       return;
